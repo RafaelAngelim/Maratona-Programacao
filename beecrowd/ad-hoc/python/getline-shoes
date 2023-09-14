@@ -1,0 +1,23 @@
+case = 0
+
+while True:
+    try:
+        wantedS = int(input())
+        shoes = input().strip().split(' ')
+        
+        if(case > 0):
+            print("")
+
+        W, H = 0, 0
+
+        for i in range(0, len(shoes), 2):
+            size, sex = int(shoes[i]), shoes[i + 1]
+            if(size == wantedS):
+                if(sex == "F"):
+                    W += 1
+                else:
+                    H += 1
+        case += 1
+        print(f"Caso {case}:\nPares Iguais: {W + H}\nF: {W}\nM: {H}")
+    except EOFError:
+        break
